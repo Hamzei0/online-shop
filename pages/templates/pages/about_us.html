@@ -1,2 +1,10 @@
-<h1>AboutUs</h1>
-<a href="{% url 'home' %}">Home</a>
+{% extends '_base.html' %}
+
+{% block title %}
+  About Us
+{% endblock %}
+
+{% block content %}
+  <h1>AboutUs</h1>
+  <a href="{% url 'home' %}">Home</a>
+{% endblock %}

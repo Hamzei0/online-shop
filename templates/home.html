@@ -1,9 +1,17 @@
-<h1>Home</h1>
-<a href="{% url 'about_us' %}">about us</a>
+{% extends '_base.html' %}
 
-{% if user.is_authenticated %}
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">logout</button>
-  </form>
-{% endif %}
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+  <h1>Home</h1>
+  <a href="{% url 'about_us' %}">about us</a>
+
+  {% if user.is_authenticated %}
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">logout</button>
+    </form>
+  {% endif %}
+{% endblock %}

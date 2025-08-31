@@ -1,6 +1,16 @@
-<h3>signup</h3>
-<form action="" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">signup</button>
-</form>
+{% extends '_base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Signup
+{% endblock %}
+
+{% block content %}
+  <h3>Signup</h3>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Signup</button>
+  </form>
+{% endblock %}
