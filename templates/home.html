@@ -9,9 +9,11 @@
   <a href="{% url 'about_us' %}">about us</a>
 
   {% if user.is_authenticated %}
-    <form action="{% url 'logout' %}" method="post">
+    <form action="{% url 'account_logout' %}" method="post">
       {% csrf_token %}
       <button type="submit">logout</button>
     </form>
+    {% else %}
+    <a href="{% url "account_login" %}">login</a>
   {% endif %}
 {% endblock %}
