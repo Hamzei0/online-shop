@@ -6,14 +6,5 @@
 
 {% block content %}
   <h1>Home</h1>
-  <a href="{% url 'about_us' %}">about us</a>
-
-  {% if user.is_authenticated %}
-    <form action="{% url 'account_logout' %}" method="post">
-      {% csrf_token %}
-      <button type="submit">logout</button>
-    </form>
-    {% else %}
-    <a href="{% url "account_login" %}">login</a>
-  {% endif %}
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, voluptatum. Voluptatem in quo, harum nemo, perferendis eaque aliquam esse corporis, corrupti amet dolor rem odio nesciunt repellat molestias libero voluptate.</p>
 {% endblock %}
