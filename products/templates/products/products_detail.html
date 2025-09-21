@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}
+  {{ product.title }}
+{% endblock %}
+
+{% block content %}
+  <h3>{{ product.title }}</h3>
+  <h5>{{ product.price }}</h5>
+  <h5>{{ product.active }}</h5>
+  {% if product.active %}
+    <h5>موجود</h5>
+  {% else %}
+    <h5>ناموجود</h5>
+  {% endif %}
+  <p>{{ product.description }}</p>
+{% endblock %}
