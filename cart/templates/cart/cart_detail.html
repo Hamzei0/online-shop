@@ -1,0 +1,121 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load persian_translations %}
+{% load humanize %}
+
+{% load crispy_forms_tags %}
+{% load custom_filters %}
+
+{% block title %}
+  {% trans 'cart' %}
+{% endblock %}
+
+{% block content %}
+  {% include 'topheader.html' with header_name='cart' %}
+
+  <!-- Main Content Wrapper Start -->
+  <div class="main-content-wrapper">
+    <div class="page-content-inner ptb--80">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mb-md--50">
+            <div class="row no-gutters">
+              <div class="col-12">
+                <div class="table-content table-responsive">
+                  {% if cart %}
+                    <table class="table text-center">
+                      <thead>
+                        <tr>
+                          <th>&nbsp;</th>
+                          <th>عکس محصول</th>
+                          <th class="text-left">نام محصول</th>
+                          <th>قیمت</th>
+                          <th>مقدار</th>
+                          <th>مجموع</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in cart %}
+                          <tr>
+                            <td class="product-remove text-left">
+                              <a href="{% url 'cart:cart_remove' item.product_obj.id %}"><i class="flaticon flaticon-cross"></i></a>
+                            </td>
+                            <td class="product-thumbnail text-left">
+                              <img src="{{ item.product_obj.cover.url }}" alt="" />
+                            </td>
+                            <td class="product-name wide-column">
+                              <h3><a href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a></h3>
+                            </td>
+                            <td class="product-price">
+                              <span class="product-price-wrapper"><span class="money">{{ item.product_obj.price|intcomma:False|translate_number }}</span></span>
+                            </td>
+                            <td class="product-quantity">
+                              <form method="post" action="{% url 'cart:cart_add' item.product_obj.id %}">
+                                {% csrf_token %}
+                                <div class="quantity">
+                                  <input type="number" class="quantity-input" name="quantity" id="qty-1" value="{{ item.quantity }}" min="1" max="5" />
+                                  {{ item.product_update_quantity_form.inplace }}
+                                  <button class="btn-small" type="submit">update</button>
+                                </div>
+                              </form>
+                            </td>
+                            <td class="product-total-price">
+                              <span class="product-price-wrapper"><span class="money">{{ item.total_price|intcomma:False|translate_number }}</span></span>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  {% else %}
+                    <p>سبد خرید خالی می باشد</p>
+                    <a href="{% url 'product_list' %}">رفتن به فروشگاه</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            {% if cart|length %}
+              <div class="row no-gutters border-top pt--20 mt--20">
+                <div class="col-sm-6 text-sm-right">
+                  <form action="{% url 'cart:clear_cart' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                  </form>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+          <div class="col-lg-4">
+            <div class="cart-collaterals">
+              <div class="cart-totals">
+                <h5 class="font-size-14 font-bold mb--15">مجموع</h5>
+                <div class="cart-calculator">
+                  <div class="cart-calculator__item">
+                    <div class="cart-calculator__item--head">
+                      <span>مجموع</span>
+                    </div>
+                    <div class="cart-calculator__item--value">
+                      <span>{{ cart.get_total_price|intcomma:False|translate_number }}</span>
+                    </div>
+                  </div>
+                  <div class="cart-calculator__item order-total">
+                    <div class="cart-calculator__item--head">
+                      <span>جمع کل</span>
+                    </div>
+                    <div class="cart-calculator__item--value">
+                      <span class="product-price-wrapper"><span class="money">{{ cart.get_total_price|intcomma:False|translate_number }}</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="{% url 'order_create' %}" class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">ثبت سفارش</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main Content Wrapper Start -->
+{% endblock %}

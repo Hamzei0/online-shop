@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-02 20:16+0330\n"
+"PO-Revision-Date: 2025-11-02 20:20+0330\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.2\n"
+
+#: .\models.py:14
+msgid "title"
+msgstr "عنوان"
+
+#: .\models.py:16
+msgid "short description"
+msgstr "توضیحات کوتاه"
+
+#: .\models.py:20
+msgid "description"
+msgstr "توضیحات"
+
+#: .\models.py:21
+msgid "price"
+msgstr "قیمت"
+
+#: .\models.py:22 .\models.py:59
+msgid "active"
+msgstr "وضعیت"
+
+#: .\models.py:24
+msgid "image"
+msgstr "عکس"
+
+#: .\models.py:26
+msgid "datetime_created"
+msgstr "زمان ساخت"
+
+#: .\models.py:27
+msgid "datetime_modified"
+msgstr "زمان تغییر"
+
+#: .\models.py:38
+msgid "very bad"
+msgstr "خیلی بد"
+
+#: .\models.py:39
+msgid "bad"
+msgstr "بد"
+
+#: .\models.py:40
+msgid "normal"
+msgstr "معمولی"
+
+#: .\models.py:41
+msgid "good"
+msgstr "خوب"
+
+#: .\models.py:42
+msgid "perfect"
+msgstr "عالی"
+
+#: .\models.py:49
+msgid "product name"
+msgstr "نام محصول"
+
+#: .\models.py:55
+msgid "comment author"
+msgstr "نام نویسنده"
+
+#: .\models.py:58
+msgid "comment text"
+msgstr "متن دیدگاه"
+
+#: .\models.py:63
+msgid "comment stars"
+msgstr "امتیاز شما"
+
+#: .\models.py:67
+msgid "datetime created"
+msgstr "زمان ساخت"
+
+#: .\models.py:68
+msgid "datetime modified"
+msgstr "زمان تغییر"
+
+#: .\templates\products\product_detail.html:18
+msgid "cart detail"
+msgstr "جزییات محصول"
+
+#: .\templates\products\product_detail.html:37
+#: .\templates\products\product_detail.html:39
+msgid "Toman"
+msgstr "تومان"
+
+#: .\templates\products\product_detail.html:56
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: .\templates\products\product_detail.html:57
+msgid "Clothing"
+msgstr "پوشاک"
+
+#: .\templates\products\product_detail.html:58
+msgid "Summer"
+msgstr "تابستان"
+
+#: .\templates\products\product_detail.html:59
+msgid "Warm"
+msgstr "گرم"
+
+#: .\templates\products\product_detail.html:60
+msgid "Women"
+msgstr "زنانه"
+
+#: .\templates\products\product_detail.html:86
+msgid "Weight"
+msgstr "سایز"
+
+#: .\templates\products\product_detail.html:89
+msgid "430 grams"
+msgstr "430 گرم"
+
+#: .\templates\products\product_detail.html:94
+msgid "Size"
+msgstr "سایز"
+
+#: .\templates\products\product_detail.html:100
+msgid "Color"
+msgstr "رنگ"
+
+#: .\templates\products\product_detail.html:103
+msgid "Black"
+msgstr "سیاه"
+
+#: .\templates\products\product_detail.html:104
+msgid "Green"
+msgstr "سبز"
+
+#: .\templates\products\product_detail.html:105
+msgid "Red"
+msgstr "قرمز"
+
+#: .\templates\products\product_detail.html:106
+msgid "Orange"
+msgstr "نارنجی"
